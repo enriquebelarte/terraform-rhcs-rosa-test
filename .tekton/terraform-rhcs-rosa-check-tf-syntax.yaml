@@ -15,4 +15,6 @@ spec:
       image: "$(params.IMAGE_URL)@$(params.IMAGE_DIGEST)"
       script: |
         ls -l
-        cd examples && terraform init
+        cd examples/rosa-classic-with-unmanaged-oidc && terraform init -backend=false
+        terraform validate
+
