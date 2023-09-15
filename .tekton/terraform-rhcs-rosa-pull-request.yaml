@@ -356,7 +356,7 @@ spec:
         - name: name
           value: test-terraform-syntax
         - name: bundle
-          value: quay.io/ebelarte/tf-rhcs/test-syntax:test
+          value: quay.io/ebelarte/tf-rhcs/download-release:tf-test-syntax
         - name: kind
           value: task
         resolver: bundles
