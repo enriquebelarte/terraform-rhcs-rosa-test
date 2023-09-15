@@ -14,7 +14,10 @@ spec:
     - name: check-tf-syntax
       image: "$(params.IMAGE_URL)@$(params.IMAGE_DIGEST)"
       script: |
-        ls -l
-        cd examples/rosa-classic-with-unmanaged-oidc && terraform init -backend=false
-        terraform validate
+        set -e
+        cd examples/rosa-classic-with-unmanaged-oidc
+        echo "Init..." && terraform init
+        echo "Validate..." && terraform validate
+        echo "Fmt..." && terraform fmt
+        echo "Plan..." && terraform plan
 
