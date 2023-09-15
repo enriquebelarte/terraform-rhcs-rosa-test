@@ -10,6 +10,7 @@ spec:
       type: string
   steps:
     - name: test-terraform-syntax
-      image: "$(params.IMAGE_URL)@$(params.IMAGE_DIGEST)"
+      #image: "$(params.IMAGE_URL)@$(params.IMAGE_DIGEST)"
+      image: ubi9:ubi:latest
       script: |
         cd examples && terraform init
