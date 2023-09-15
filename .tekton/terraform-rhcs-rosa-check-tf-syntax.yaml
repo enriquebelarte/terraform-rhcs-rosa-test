@@ -4,10 +4,6 @@ metadata:
   name: test-terraform-syntax
 
 spec:
-  workspaces:
-  - name: test-syntax
-    workspace: workspace
-
   params:
     - name: IMAGE_URL
       type: string
