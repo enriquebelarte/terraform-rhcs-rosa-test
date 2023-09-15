@@ -2,14 +2,12 @@ apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
   name: test-terraform-syntax
-
 spec:
   params:
     - name: IMAGE_URL
       type: string
     - name: IMAGE_DIGEST
       type: string
-
   steps:
     - name: test-terraform-syntax
       image: "$(params.IMAGE_URL)@$(params.IMAGE_DIGEST)"
