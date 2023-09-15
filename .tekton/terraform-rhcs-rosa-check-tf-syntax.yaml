@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
-  name: test-terraform-syntax
+  name: check-tf-syntax
 
 spec:
   params:
@@ -11,7 +11,7 @@ spec:
       type: string
 
   steps:
-    - name: test-terraform-syntax
+    - name: check-tf-syntax
       image: "$(params.IMAGE_URL)@$(params.IMAGE_DIGEST)"
       script: |
         cd examples && terraform init

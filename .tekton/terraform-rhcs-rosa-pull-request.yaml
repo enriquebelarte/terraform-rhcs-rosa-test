@@ -343,7 +343,7 @@ spec:
         operator: in
         values:
         - "false"
-    - name: test-terraform-syntax
+    - name: check-tf-syntax
       params:
       - name: IMAGE_URL
         value: $(tasks.build-container.results.IMAGE_URL)
@@ -354,7 +354,7 @@ spec:
       taskRef:
         params:
         - name: name
-          value: test-terraform-syntax
+          value: check-tf-syntax
         - name: bundle
           value: quay.io/ebelarte/tf-rhcs/download-release:tf-syntax
         - name: kind
