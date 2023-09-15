@@ -12,7 +12,6 @@ spec:
 
   steps:
     - name: test-terraform-syntax
-      #image: ubi9/ubi:latest
       image: "$(params.IMAGE_URL)@$(params.IMAGE_DIGEST)"
 
       script: |
