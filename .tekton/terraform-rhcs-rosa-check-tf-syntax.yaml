@@ -13,7 +13,5 @@ spec:
   steps:
     - name: test-terraform-syntax
       image: "$(params.IMAGE_URL)@$(params.IMAGE_DIGEST)"
-
       script: |
         cd examples && terraform init
-
