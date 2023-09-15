@@ -14,4 +14,5 @@ spec:
     - name: check-tf-syntax
       image: "$(params.IMAGE_URL)@$(params.IMAGE_DIGEST)"
       script: |
+        ls -l
         cd examples && terraform init
