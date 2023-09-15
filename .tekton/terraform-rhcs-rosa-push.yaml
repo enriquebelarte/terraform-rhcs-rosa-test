@@ -366,6 +366,34 @@ spec:
     - name: workspace
     - name: git-auth
       optional: true
+
+    - name: test-terraform-syntax
+      params:
+      - name: IMAGE_URL
+        value: $(tasks.build-container.results.IMAGE_URL)
+      - name: IMAGE_DIGEST
+        value: $(tasks.build-container.results.IMAGE_DIGEST)
+      runAfter:
+      - build-container
+      taskRef:
+        params:
+        - name: name
+          value: test-terraform-syntax
+        - name: bundle
+          value: quay.io/ebelarte/tf-rhcs/test-syntax:test
+        - name: kind
+          value: task
+        resolver: bundles
+      when:
+      - input: $(params.skip-checks)    # This references the pipeline parameters
+        operator: in
+        values:
+        - "false"
+    workspaces:
+    - name: test-syntax
+      workspace: workspace
+      optional: true
+
   workspaces:
   - name: workspace
     volumeClaimTemplate:
